@@ -8,10 +8,9 @@ This is a simple web application built using the **Spring Framework** that integ
 ## Features
 
 - **User Authentication**: Users log in using a username and password stored in the MySQL database (passwords are encrypted using **BCrypt**).
-- **Role-based Authorization**: Users have different roles (e.g., Admin, User) and can access specific pages based on their roles.
+- **Role-based Authorization**: Users have different roles ( Admin, Manager and Employee ) and can access specific pages based on their roles.
 - **Custom Homepages**: Each user is directed to a different homepage after login, depending on their role.
 - **Login & Logout Forms**: Custom login and logout forms are provided by **Spring Security**.
-- **RESTful API**: The application exposes some APIs via **Spring Data REST**.
   
 ## Technologies Used
 
