@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Code2Go Company</title>
+</head>
+<body>
+<h2> Code2Go Company Home Page</h2>
+<hr>
+<p>
+    Welcome to the Code2Go Company Home Page :)
+</p>
+
+<hr>
+
+<!--add a link to point to /managers-->
+<div sec:authorize="hasRole('MANAGER')">
+    <p>
+        <a th:href="@{/managers}">Management Meeting</a>
+        (Only for Managers)
+    </p>
+</div>
+<!--add a link to point to /system-->
+<div sec:authorize="hasRole('ADMIN')">
+    <p>
+        <a th:href="@{/system}">System Management</a>
+        (Only for Admin)
+    </p>
+</div>
+
+<p>
+    User : <span sec:authentication="principal.username"></span>
+
+    <br><br>
+
+    Role : <span sec:authentication="principal.authorities"></span>
+</p>
+
+<hr>
+
+<!-- add a logout button-->
+<form action="#" th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout"/>
+</form>
+
+</body>
+</html>
